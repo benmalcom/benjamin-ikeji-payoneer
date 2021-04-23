@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 import dayjs from 'dayjs';
 import { fetchForecasts, resetForecastState, applyMetricToForecasts, setCurrentMetric } from 'redux/actions';
 import { requestKeys } from 'services/_request/keys';
-import Carousel from 'components/Weather/Carousel';
+import ForecastCarousel from 'components/Weather/ForecastCarousel';
 import MetricSwitcher from 'components/Weather/MetricSwitcher';
 import Loading from 'components/UI/Loading';
 import DailyWeatherBarChart from 'components/Weather/DailyWeatherChart';
@@ -55,7 +55,8 @@ const Forecast = () => {
 
   return loading ? <Loading /> : <Container>
     <MetricSwitcher value={currentMetric} onChange={onMetricChange} />
-    <Carousel
+    <ForecastCarousel
+      setCurrentDate={setCurrentDate}
       metric={currentMetric}
       selectedDate={currentDate}
       items={forecastsForNextDays}

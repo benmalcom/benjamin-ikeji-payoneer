@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Carousel renders without crash 1`] = `
+exports[`ForecastCarousel renders without crash 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
