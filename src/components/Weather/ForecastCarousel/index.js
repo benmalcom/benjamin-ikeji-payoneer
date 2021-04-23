@@ -28,6 +28,7 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: false,
+  swipeToSlide: false,
   responsive: [
     {
       breakpoint: deviceBreakpoints.TABLETS_AND_LAPTOPS.minDeviceWidth,
@@ -82,19 +83,19 @@ const WeatherCarousel = (props) => {
     }
   };
 
-  const showLeftArrow = currentSlide > 0;
-  const showRightArrow = !!items[currentSlide + getNumOfVisibleSlides()];
+  const isLeftArrowVisible = currentSlide > 0;
+  const iRightArrowVisible = !!items[currentSlide + getNumOfVisibleSlides()];
 
   return <>
     <Box component='div' className={cx(
       styles['controls-container'],
-      { [styles['controls-left']]: showLeftArrow && !showRightArrow },
-      { [styles['controls-right']]: showRightArrow && !showLeftArrow },
+      { [styles['controls-left']]: isLeftArrowVisible && !iRightArrowVisible },
+      { [styles['controls-right']]: iRightArrowVisible && !isLeftArrowVisible },
     )}>
-      {showLeftArrow && <Button className={styles.controls} onClick={gotoPrevious}>
+      {isLeftArrowVisible && <Button className={styles.controls} onClick={gotoPrevious}>
         <ArrowBackIcon fontSize='large' />
       </Button>}
-      {showRightArrow && <Button className={styles.controls} onClick={gotoNext}>
+      {iRightArrowVisible && <Button className={styles.controls} onClick={gotoNext}>
         <ArrowForwardIcon fontSize='large' />
       </Button>}
     </Box>
