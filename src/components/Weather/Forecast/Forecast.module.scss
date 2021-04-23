@@ -1,0 +1,27 @@
+
+.card {
+  box-sizing: content-box;
+  background-color: #FFFFFF;
+  cursor: pointer !important;
+  box-shadow: 0 0 1px hsla(0, 0, 0, 0.2) !important;
+  margin: 0 3px;
+}
+
+.selected {
+  box-shadow: 0 0 4px #426CC0 !important;
+}
+
+.image {
+  max-height: 100px;
+  max-width: 100px;
+  margin: auto;
+}
+
+@media (max-width: 770px) {
+  .card {
+    margin: 2% 0 !important
+  }
+  .image {
+    width: 50%;
+  }
+}

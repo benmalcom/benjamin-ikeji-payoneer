@@ -1,0 +1,24 @@
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+.controls-left {
+  justify-content: flex-start !important;
+}
+
+.controls-right {
+  justify-content: flex-end !important;
+}
+.controls {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  min-width: 0;
+  &:hover, &:focus {
+    background-color: transparent;
+  }
+  svg {
+    fill: #426CC0;
+  }
+}
