@@ -33,6 +33,11 @@ Object {
                   <div
                     class="MuiCardContent-root"
                   >
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                    >
+                      24 Apr, 2021
+                    </p>
                     <img
                       alt="forecast-icon"
                       class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -48,11 +53,6 @@ Object {
                     >
                       277undefined
                     </h2>
-                    <p
-                      class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                    >
-                      24 Apr, 2021
-                    </p>
                     <p
                       class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                     >
@@ -77,6 +77,11 @@ Object {
                   <div
                     class="MuiCardContent-root"
                   >
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                    >
+                      24 Apr, 2021
+                    </p>
                     <img
                       alt="forecast-icon"
                       class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -92,11 +97,6 @@ Object {
                     >
                       276undefined
                     </h2>
-                    <p
-                      class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                    >
-                      24 Apr, 2021
-                    </p>
                     <p
                       class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                     >
@@ -121,6 +121,11 @@ Object {
                   <div
                     class="MuiCardContent-root"
                   >
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                    >
+                      24 Apr, 2021
+                    </p>
                     <img
                       alt="forecast-icon"
                       class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -136,11 +141,6 @@ Object {
                     >
                       277undefined
                     </h2>
-                    <p
-                      class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                    >
-                      24 Apr, 2021
-                    </p>
                     <p
                       class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                     >
@@ -165,6 +165,11 @@ Object {
                   <div
                     class="MuiCardContent-root"
                   >
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                    >
+                      24 Apr, 2021
+                    </p>
                     <img
                       alt="forecast-icon"
                       class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -180,11 +185,6 @@ Object {
                     >
                       276undefined
                     </h2>
-                    <p
-                      class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                    >
-                      24 Apr, 2021
-                    </p>
                     <p
                       class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                     >
@@ -231,6 +231,11 @@ Object {
                 <div
                   class="MuiCardContent-root"
                 >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                  >
+                    24 Apr, 2021
+                  </p>
                   <img
                     alt="forecast-icon"
                     class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -246,11 +251,6 @@ Object {
                   >
                     277undefined
                   </h2>
-                  <p
-                    class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                  >
-                    24 Apr, 2021
-                  </p>
                   <p
                     class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                   >
@@ -275,6 +275,11 @@ Object {
                 <div
                   class="MuiCardContent-root"
                 >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                  >
+                    24 Apr, 2021
+                  </p>
                   <img
                     alt="forecast-icon"
                     class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -290,11 +295,6 @@ Object {
                   >
                     276undefined
                   </h2>
-                  <p
-                    class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                  >
-                    24 Apr, 2021
-                  </p>
                   <p
                     class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                   >
@@ -319,6 +319,11 @@ Object {
                 <div
                   class="MuiCardContent-root"
                 >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                  >
+                    24 Apr, 2021
+                  </p>
                   <img
                     alt="forecast-icon"
                     class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -334,11 +339,6 @@ Object {
                   >
                     277undefined
                   </h2>
-                  <p
-                    class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                  >
-                    24 Apr, 2021
-                  </p>
                   <p
                     class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                   >
@@ -363,6 +363,11 @@ Object {
                 <div
                   class="MuiCardContent-root"
                 >
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+                  >
+                    24 Apr, 2021
+                  </p>
                   <img
                     alt="forecast-icon"
                     class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -378,11 +383,6 @@ Object {
                   >
                     276undefined
                   </h2>
-                  <p
-                    class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-                  >
-                    24 Apr, 2021
-                  </p>
                   <p
                     class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
                   >

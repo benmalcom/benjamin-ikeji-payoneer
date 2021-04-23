@@ -12,9 +12,16 @@ import { metricValuesIconMap, roundToTemp } from 'utils/forecast';
 const Forecast = (props) => {
   const { weatherData, onClick, selectedDate, currentMetric } = props;
   const date = dayjs(weatherData.dt_txt).format('DD/MM/YYYY');
-  const wordedDate = dayjs(weatherData.dt_txt).format(`DD MMM, YYYY`);
+
+  const isToday = dayjs().isSame(dayjs(weatherData.dt_txt), 'day');
+
+  const wordedDate = `${dayjs(weatherData.dt_txt).format(`DD MMM, YYYY`)}${isToday ? ' (Today)' : ''}`.trim();
+
   return <Card className={cx(styles.card, date === selectedDate && styles.selected)} onClick={() => onClick(date)}>
     <CardContent>
+      <Typography color="textPrimary" align='center'  component='p'>
+        {wordedDate}
+      </Typography>
       <CardMedia
         className={styles.image}
         component='img'
@@ -27,9 +34,6 @@ const Forecast = (props) => {
       <Typography gutterBottom variant='h4' component='h2' align='center'>
         {`${roundToTemp(weatherData.main.temp)}${metricValuesIconMap[currentMetric]}`}
 
-      </Typography>
-      <Typography variant='subtitle1' align='center' color='textSecondary' component='p'>
-        {wordedDate}
       </Typography>
       <Typography variant='subtitle1' color='textSecondary' align='center' component='p'>
         Average Temp: {`${roundToTemp(weatherData.avg_temp)}${metricValuesIconMap[currentMetric]}`}

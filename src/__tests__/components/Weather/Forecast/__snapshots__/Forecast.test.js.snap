@@ -11,6 +11,11 @@ Object {
         <div
           class="MuiCardContent-root"
         >
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+          >
+            24 Apr, 2021
+          </p>
           <img
             alt="forecast-icon"
             class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -29,11 +34,6 @@ Object {
           <p
             class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
           >
-            24 Apr, 2021
-          </p>
-          <p
-            class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-          >
             Average Temp: 
             288°C
           </p>
@@ -48,6 +48,11 @@ Object {
       <div
         class="MuiCardContent-root"
       >
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+        >
+          24 Apr, 2021
+        </p>
         <img
           alt="forecast-icon"
           class="MuiCardMedia-root image MuiCardMedia-media MuiCardMedia-img"
@@ -63,11 +68,6 @@ Object {
         >
           277°C
         </h2>
-        <p
-          class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
-        >
-          24 Apr, 2021
-        </p>
         <p
           class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
         >
