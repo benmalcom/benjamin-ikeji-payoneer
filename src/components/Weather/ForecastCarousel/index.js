@@ -23,12 +23,11 @@ const deviceBreakpoints = {
 
 const settings = {
   dots: false,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: false,
-  edgeFriction: 0,
   responsive: [
     {
       breakpoint: deviceBreakpoints.TABLETS_AND_LAPTOPS.minDeviceWidth,
