@@ -23,8 +23,10 @@ const Forecast = () => {
   const getForecasts = (params) => dispatch(fetchForecasts(params));
 
   useEffect(() => {
-    getForecasts({ q: 'Lagos', units: 'metric' });
-    return () => dispatch(resetForecastState());
+    getForecasts({ q: 'Munich,de', units: 'metric' });
+    return () => {
+      dispatch(resetForecastState());
+    }
   }, []);
 
   useEffect(() => {
