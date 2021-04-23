@@ -28,7 +28,7 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: false,
-  swipeToSlide: false,
+  edgeFriction: 0,
   responsive: [
     {
       breakpoint: deviceBreakpoints.TABLETS_AND_LAPTOPS.minDeviceWidth,
