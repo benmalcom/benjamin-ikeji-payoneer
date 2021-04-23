@@ -15,6 +15,7 @@
     "chart.js": "^3.1.1",
     "classnames": "^2.3.1",
     "dayjs": "^1.10.4",
+    "gh-pages": "^3.1.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
     "lodash": "^4.17.20",
@@ -35,6 +36,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --verbose",
@@ -55,6 +58,7 @@
       "last 1 safari version"
     ]
   },
+  "homepage": "http://benmalcom.github.io/benjamin-ikeji-payoneer",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
