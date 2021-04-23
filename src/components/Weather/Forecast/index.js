@@ -4,15 +4,13 @@ import PropTypes from 'prop-types';
 import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import dayjs from 'dayjs';
 import forecastPropTypes from 'utils/prop-types/forecast';
-import { useSelector } from 'react-redux';
 
 import styles from './Forecast.module.scss';
 import { metricValuesIconMap, roundToTemp } from 'utils/forecast';
 
 
 const Forecast = (props) => {
-  const { weatherData, onClick, selectedDate } = props;
-  const { currentMetric } = useSelector(({ forecasts: { currentMetric } }) => ({ currentMetric }));
+  const { weatherData, onClick, selectedDate, currentMetric } = props;
   const date = dayjs(weatherData.dt_txt).format('DD/MM/YYYY');
   const wordedDate = dayjs(weatherData.dt_txt).format(`DD MMM, YYYY`);
   return <Card className={cx(styles.card, date === selectedDate && styles.selected)} onClick={() => onClick(date)}>
@@ -44,6 +42,7 @@ Forecast.propTypes = {
   weatherData: PropTypes.shape(forecastPropTypes).isRequired,
   onClick: PropTypes.func.isRequired,
   selectedDate: PropTypes.string,
+  currentMetric: PropTypes.string.isRequired,
 };
 
 Forecast.defaultProps = {

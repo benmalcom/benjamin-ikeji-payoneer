@@ -45,7 +45,7 @@ const settings = {
 };
 
 const WeatherCarousel = (props) => {
-  const { items, onCardItemClick, selectedDate, setCurrentDate } = props;
+  const { items, onCardItemClick, selectedDate, setCurrentDate, currentMetric } = props;
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
 
@@ -94,6 +94,7 @@ const WeatherCarousel = (props) => {
     </Box>
     <Slider ref={sliderRef} {...settings}>
       {items.map(item => <WeatherCard
+        currentMetric={currentMetric}
         selectedDate={selectedDate}
         onClick={onCardItemClick}
         weatherData={item}
@@ -107,6 +108,7 @@ WeatherCarousel.propTypes = {
   onCardItemClick: PropTypes.func.isRequired,
   setCurrentDate: PropTypes.func.isRequired,
   selectedDate: PropTypes.string,
+  currentMetric: PropTypes.string.isRequired,
 };
 
 WeatherCarousel.defaultProps = {

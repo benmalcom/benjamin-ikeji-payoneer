@@ -21,20 +21,20 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-6 MuiRadio-root makeStyles-root-2 PrivateSwitchBase-checked-7 Mui-checked"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root makeStyles-root-2 PrivateSwitchBase-checked-6 Mui-checked"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
                     checked=""
-                    class="PrivateSwitchBase-input-9"
+                    class="PrivateSwitchBase-input-8"
                     name="radio-button-metric"
                     type="radio"
                     value="C"
                   />
                   <span
-                    class="makeStyles-icon-3 makeStyles-checkedIcon-5"
+                    class="makeStyles-icon-3 makeStyles-checkedIcon-4"
                   />
                 </span>
               </span>
@@ -50,13 +50,13 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-6 MuiRadio-root makeStyles-root-2"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root makeStyles-root-2"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-9"
+                    class="PrivateSwitchBase-input-8"
                     name="radio-button-metric"
                     type="radio"
                     value="F"
@@ -75,7 +75,7 @@ Object {
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-10 controls-container"
+          class="MuiBox-root MuiBox-root-9 controls-container"
         />
         <div
           class="slick-slider slick-initialized"
@@ -112,20 +112,20 @@ Object {
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-6 MuiRadio-root makeStyles-root-2 PrivateSwitchBase-checked-7 Mui-checked"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root makeStyles-root-2 PrivateSwitchBase-checked-6 Mui-checked"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
                   checked=""
-                  class="PrivateSwitchBase-input-9"
+                  class="PrivateSwitchBase-input-8"
                   name="radio-button-metric"
                   type="radio"
                   value="C"
                 />
                 <span
-                  class="makeStyles-icon-3 makeStyles-checkedIcon-5"
+                  class="makeStyles-icon-3 makeStyles-checkedIcon-4"
                 />
               </span>
             </span>
@@ -141,13 +141,13 @@ Object {
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-6 MuiRadio-root makeStyles-root-2"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root makeStyles-root-2"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-9"
+                  class="PrivateSwitchBase-input-8"
                   name="radio-button-metric"
                   type="radio"
                   value="F"
@@ -166,7 +166,7 @@ Object {
         </div>
       </div>
       <div
-        class="MuiBox-root MuiBox-root-10 controls-container"
+        class="MuiBox-root MuiBox-root-9 controls-container"
       />
       <div
         class="slick-slider slick-initialized"

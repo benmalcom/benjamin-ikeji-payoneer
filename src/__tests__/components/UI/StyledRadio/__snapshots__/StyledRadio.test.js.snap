@@ -7,13 +7,13 @@ Object {
     <div>
       <span
         aria-disabled="false"
-        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root makeStyles-root-1"
+        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiRadio-root makeStyles-root-1"
       >
         <span
           class="MuiIconButton-label"
         >
           <input
-            class="PrivateSwitchBase-input-8"
+            class="PrivateSwitchBase-input-7"
             type="radio"
             value=""
           />
@@ -27,13 +27,13 @@ Object {
   "container": <div>
     <span
       aria-disabled="false"
-      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root makeStyles-root-1"
+      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiRadio-root makeStyles-root-1"
     >
       <span
         class="MuiIconButton-label"
       >
         <input
-          class="PrivateSwitchBase-input-8"
+          class="PrivateSwitchBase-input-7"
           type="radio"
           value=""
         />

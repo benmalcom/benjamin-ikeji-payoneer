@@ -56,6 +56,7 @@ const Forecast = () => {
   return loading ? <Loading /> : <Container>
     <MetricSwitcher value={currentMetric} onChange={onMetricChange} />
     <ForecastCarousel
+      currentMetric={currentMetric}
       setCurrentDate={setCurrentDate}
       metric={currentMetric}
       selectedDate={currentDate}

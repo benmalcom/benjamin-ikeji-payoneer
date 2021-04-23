@@ -2,22 +2,22 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Forecast from 'components/Weather/Forecast';
 import mockWeatherData from 'utils/mock-data/weatherData.json';
-import { createTestStore } from 'utils/test/test-utils';
-import { Provider } from 'react-redux';
 import dayjs from 'dayjs';
-import { roundToTemp } from 'utils/forecast';
+import { metricValuesIconMap, roundToTemp } from 'utils/forecast';
 
 describe('components > Forecast', () => {
   const onClick = jest.fn();
   const selectedDate = '12/11/2020';
   const weatherData = mockWeatherData[0];
-  const getComponent = props => render(<Provider store={createTestStore()}><Forecast {...props} /></Provider>);
+  const currentMetric = 'C';
+  const getComponent = props => render(<Forecast {...props} />);
 
   it('renders without crash', async () => {
     const component = getComponent({
       onClick,
       selectedDate,
       weatherData,
+      currentMetric
     });
     expect(component).toMatchSnapshot();
   });
@@ -27,13 +27,21 @@ describe('components > Forecast', () => {
       onClick,
       selectedDate,
       weatherData,
+      currentMetric
     });
     const displayDate = dayjs(weatherData.dt_txt).format('DD MMM, YYYY');
-    const rounded = roundToTemp(276.84);
-    const roundedNumberMatch = new RegExp(rounded.toString(), 'i');
+
+    const mainTemp = `${roundToTemp(276.84).toString()}${metricValuesIconMap['C']}`
+    const mainTempRegEx = new RegExp(mainTemp, 'i');
+
+    const avgTemp = `${Number(288).toString()}${metricValuesIconMap['C']}`;
+    const avgTempRegEx = new RegExp(avgTemp, 'i');
+
+
     expect(getByText(/Clear/i)).toBeInTheDocument();
     expect(getByText(/288/i)).toBeInTheDocument();
-    expect(getByText(roundedNumberMatch)).toBeInTheDocument();
+    expect(getByText(mainTempRegEx)).toBeInTheDocument();
+    expect(getByText(avgTempRegEx)).toBeInTheDocument();
     expect(getByAltText(/forecast-icon/i)).toBeInTheDocument();
     expect(getByText(`${displayDate}`)).toBeInTheDocument();
   });

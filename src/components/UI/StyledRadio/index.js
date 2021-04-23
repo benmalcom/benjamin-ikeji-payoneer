@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 const useStyles = makeStyles({
   root: {
+    fontWeight: 'bold !important',
     '&:hover': {
       backgroundColor: 'transparent',
     },
@@ -25,9 +26,6 @@ const useStyles = makeStyles({
       boxShadow: 'none',
       background: 'rgba(206,217,224,.5)',
     },
-  },
-  label: {
-    fontWeight: 'bold !important'
   },
   checkedIcon: {
     backgroundColor: '#426CC0',
