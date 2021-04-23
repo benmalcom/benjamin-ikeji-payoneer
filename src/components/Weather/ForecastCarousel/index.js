@@ -17,7 +17,7 @@ import forecastProptypes from 'utils/prop-types/forecast';
 
 const deviceBreakpoints = {
   MOBILE: { minDeviceWidth: 320, maxDeviceWidth: 480 },
-  LOW_RES_TABLET_OR_MOBILE: { minDeviceWidth: 480, maxDeviceWidth: 768 },
+  LOW_RES_TABLET_OR_MOBILE: { minDeviceWidth: 481, maxDeviceWidth: 768 },
   TABLETS_AND_LAPTOPS: { minDeviceWidth: 1024 },
 }
 
@@ -36,13 +36,13 @@ const settings = {
       },
     },
     {
-      breakpoint: deviceBreakpoints.LOW_RES_TABLET_OR_MOBILE.minDeviceWidth,
+      breakpoint: deviceBreakpoints.LOW_RES_TABLET_OR_MOBILE.maxDeviceWidth,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: deviceBreakpoints.MOBILE.minDeviceWidth,
+      breakpoint: deviceBreakpoints.MOBILE.maxDeviceWidth,
       settings: {
         slidesToShow: 1,
       },

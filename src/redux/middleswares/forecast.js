@@ -2,7 +2,6 @@ import {
   apiRequest,
   APPLY_METRICS_TO_FORECASTS,
   FETCH_FORECASTS,
-  applyMetricToForecasts as applyMetrics,
   updateForecastList,
   setCurrentMetric,
 } from '../actions';

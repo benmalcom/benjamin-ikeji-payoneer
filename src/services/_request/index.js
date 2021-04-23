@@ -22,7 +22,7 @@ instance.interceptors.response.use(
   error => {
     if (error.response) {
       if (error.code === 'ECONNABORTED')
-        throw 'Network timeout, please try again';
+        throw new Error('Network timeout, please try again');
       // The request was made and the server responded with a status code
       // that falls out of the range of 2xx
       throw error.response.data;
