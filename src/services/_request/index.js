@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Default config options
 const defaultOptions = {
-  baseURL: 'http://api.openweathermap.org/data/2.5/',
+  baseURL: 'https://api.openweathermap.org/data/2.5/',
   method: 'GET',
   params: {
     APPID: '75f972b80e26f14fe6c920aa6a85ad57'
