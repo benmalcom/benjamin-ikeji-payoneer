@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/benjamin-ikeji-payoneer/static/css/main.90844c53.chunk.css",
+    "main.css": "/benjamin-ikeji-payoneer/static/css/main.fe0c6bea.chunk.css",
     "main.js": "/benjamin-ikeji-payoneer/static/js/main.422f8239.chunk.js",
     "main.js.map": "/benjamin-ikeji-payoneer/static/js/main.422f8239.chunk.js.map",
     "runtime-main.js": "/benjamin-ikeji-payoneer/static/js/runtime-main.2368a200.js",
@@ -12,7 +12,7 @@
     "static/js/3.a646a824.chunk.js.map": "/benjamin-ikeji-payoneer/static/js/3.a646a824.chunk.js.map",
     "index.html": "/benjamin-ikeji-payoneer/index.html",
     "static/css/2.ff2ed4c4.chunk.css.map": "/benjamin-ikeji-payoneer/static/css/2.ff2ed4c4.chunk.css.map",
-    "static/css/main.90844c53.chunk.css.map": "/benjamin-ikeji-payoneer/static/css/main.90844c53.chunk.css.map",
+    "static/css/main.fe0c6bea.chunk.css.map": "/benjamin-ikeji-payoneer/static/css/main.fe0c6bea.chunk.css.map",
     "static/js/2.6db1e454.chunk.js.LICENSE.txt": "/benjamin-ikeji-payoneer/static/js/2.6db1e454.chunk.js.LICENSE.txt",
     "static/media/slick-theme.css": "/benjamin-ikeji-payoneer/static/media/slick.c94f7671.ttf"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.2368a200.js",
     "static/css/2.ff2ed4c4.chunk.css",
     "static/js/2.6db1e454.chunk.js",
-    "static/css/main.90844c53.chunk.css",
+    "static/css/main.fe0c6bea.chunk.css",
     "static/js/main.422f8239.chunk.js"
   ]
 }
