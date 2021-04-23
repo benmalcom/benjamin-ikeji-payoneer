@@ -15,6 +15,12 @@ import { Box, Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import forecastProptypes from 'utils/prop-types/forecast';
 
+const deviceBreakpoints = {
+  MOBILE: { minDeviceWidth: 320, maxDeviceWidth: 480 },
+  LOW_RES_TABLET_OR_MOBILE: { minDeviceWidth: 481, maxDeviceWidth: 768 },
+  TABLETS_AND_LAPTOPS: { minDeviceWidth: 1024 },
+}
+
 const settings = {
   dots: false,
   infinite: true,
@@ -24,19 +30,19 @@ const settings = {
   arrows: false,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: deviceBreakpoints.TABLETS_AND_LAPTOPS.minDeviceWidth,
       settings: {
         slidesToShow: 3,
       },
     },
     {
-      breakpoint: 768,
+      breakpoint: deviceBreakpoints.LOW_RES_TABLET_OR_MOBILE.minDeviceWidth,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 480,
+      breakpoint: deviceBreakpoints.MOBILE.minDeviceWidth,
       settings: {
         slidesToShow: 1,
       },
@@ -49,8 +55,8 @@ const WeatherCarousel = (props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
 
-  const isLowResTableOrMobile = useMediaQuery({ minDeviceWidth: 481, maxDeviceWidth: 768 });
-  const isMobile = useMediaQuery({ minDeviceWidth: 320, maxDeviceWidth: 480 });
+  const isMobile = useMediaQuery(deviceBreakpoints.MOBILE);
+  const isLowResTableOrMobile = useMediaQuery(deviceBreakpoints.LOW_RES_TABLET_OR_MOBILE);
 
   const getNumOfVisibleSlides = () => {
     if (isMobile) return 1;
