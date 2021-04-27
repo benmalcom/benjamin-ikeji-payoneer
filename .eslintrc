@@ -1,11 +1,23 @@
 {
-  "extends": ["react-app", "react-app/jest", "prettier"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "prettier"
+  ],
   "globals": {
     "React": true,
     "ReactDOM": true,
     "PropTypes": true
   },
-  "rules": {
-    "import/no-anonymous-default-export": 0,
-  }
+  "overrides": [
+    {
+      "files": [
+        "**/*.js"
+      ],
+      "rules": {
+        "react-hooks/exhaustive-deps": "off",
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ]
 }

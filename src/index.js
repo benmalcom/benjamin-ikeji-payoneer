@@ -6,23 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import './index.scss';
 
-
-import {dom, library} from '@fortawesome/fontawesome-svg-core';
-import {
-  faCheck,
-  faChevronRight,
-  faCircleNotch,
-  faChevronLeft
-} from '@fortawesome/free-solid-svg-icons';
-
-library.add(
-  faChevronRight,
-  faCheck,
-  faCircleNotch,
-  faChevronLeft
-);
-dom.watch();
-
 ReactDOM.render(
   <Provider store={store}>
     <App />
