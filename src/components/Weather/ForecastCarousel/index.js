@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import cx from 'classnames';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -19,7 +19,7 @@ const deviceBreakpoints = {
   MOBILE: { minDeviceWidth: 320, maxDeviceWidth: 480 },
   LOW_RES_TABLET_OR_MOBILE: { minDeviceWidth: 481, maxDeviceWidth: 768 },
   TABLETS_AND_LAPTOPS: { minDeviceWidth: 1024 },
-}
+};
 
 const settings = {
   dots: false,
@@ -53,6 +53,7 @@ const settings = {
 const WeatherCarousel = (props) => {
   const { items, onCardItemClick, selectedDate, setCurrentDate, currentMetric } = props;
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlides, setCurrentSlides] = useState([]);
   const sliderRef = useRef(null);
 
   const isMobile = useMediaQuery(deviceBreakpoints.MOBILE);
@@ -62,7 +63,7 @@ const WeatherCarousel = (props) => {
     if (isMobile) return 1;
     else if (isLowResTableOrMobile) return 2;
     else return 3;
-  }
+  };
 
   const gotoNext = () => {
     sliderRef.current.slickNext();
@@ -72,41 +73,65 @@ const WeatherCarousel = (props) => {
     sliderRef.current.slickPrev();
   };
 
-  settings.afterChange = index => {
+  settings.afterChange = (index) => {
     setCurrentSlide(index);
-    if (isMobile) {
-      const current = items[index];
-      if (current) {
-        setCurrentDate(dayjs(current.dt_txt).format('DD/MM/YYYY'))
-      }
-    }
   };
+
+  useEffect(() => {
+    if (currentSlide === 0) return;
+    const slides = [currentSlide];
+    [currentSlide + 1, currentSlide + 2].forEach((index) => {
+      if (items[index]) slides.push(index);
+    });
+    const hasSelection = slides.some((index) => {
+      const current = items[index];
+      return dayjs(current.dt_txt).format('DD/MM/YYYY') === selectedDate;
+    });
+
+    if (!hasSelection) {
+      const current = items[currentSlide];
+      const newDate = dayjs(current.dt_txt).format('DD/MM/YYYY');
+      setCurrentDate(newDate);
+    }
+  }, [currentSlide]);
 
   const isLeftArrowVisible = currentSlide > 0;
   const iRightArrowVisible = !!items[currentSlide + getNumOfVisibleSlides()];
 
-  return <>
-    <Box component='div' className={cx(
-      styles['controls-container'],
-      { [styles['controls-left']]: isLeftArrowVisible && !iRightArrowVisible },
-      { [styles['controls-right']]: iRightArrowVisible && !isLeftArrowVisible },
-    )}>
-      {isLeftArrowVisible && <Button className={styles.controls} onClick={gotoPrevious}>
-        <ArrowBackIcon fontSize='large' />
-      </Button>}
-      {iRightArrowVisible && <Button className={styles.controls} onClick={gotoNext}>
-        <ArrowForwardIcon fontSize='large' />
-      </Button>}
-    </Box>
-    <Slider ref={sliderRef} {...settings}>
-      {items.map(item => <WeatherCard
-        currentMetric={currentMetric}
-        selectedDate={selectedDate}
-        onClick={onCardItemClick}
-        weatherData={item}
-        key={uuid} />)}
-    </Slider>
-  </>;
+  return (
+    <>
+      <Box
+        component="div"
+        className={cx(
+          styles['controls-container'],
+          { [styles['controls-left']]: isLeftArrowVisible && !iRightArrowVisible },
+          { [styles['controls-right']]: iRightArrowVisible && !isLeftArrowVisible }
+        )}
+      >
+        {isLeftArrowVisible && (
+          <Button className={styles.controls} onClick={gotoPrevious}>
+            <ArrowBackIcon fontSize="large" />
+          </Button>
+        )}
+        {iRightArrowVisible && (
+          <Button className={styles.controls} onClick={gotoNext}>
+            <ArrowForwardIcon fontSize="large" />
+          </Button>
+        )}
+      </Box>
+      <Slider ref={sliderRef} {...settings}>
+        {items.map((item) => (
+          <WeatherCard
+            currentMetric={currentMetric}
+            selectedDate={selectedDate}
+            onClick={onCardItemClick}
+            weatherData={item}
+            key={uuid}
+          />
+        ))}
+      </Slider>
+    </>
+  );
 };
 
 WeatherCarousel.propTypes = {
