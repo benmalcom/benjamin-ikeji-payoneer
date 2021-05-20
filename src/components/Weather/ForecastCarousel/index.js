@@ -53,7 +53,6 @@ const settings = {
 const WeatherCarousel = (props) => {
   const { items, onCardItemClick, selectedDate, setCurrentDate, currentMetric } = props;
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentSlides, setCurrentSlides] = useState([]);
   const sliderRef = useRef(null);
 
   const isMobile = useMediaQuery(deviceBreakpoints.MOBILE);

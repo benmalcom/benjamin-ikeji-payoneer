@@ -5,6 +5,7 @@ export const RESET_FORECAST_STATE = createActionType('RESET_FORECAST_STATE', 'We
 export const APPLY_METRICS_TO_FORECASTS = createActionString('APPLY_METRICS_TO_FORECASTS', 'Forecast');
 export const UPDATE_FORECAST_LIST = createActionString('UPDATE_FORECAST_LIST', 'Forecast');
 export const SET_CURRENT_METRIC = createActionString('SET_CURRENT_METRIC', 'Temperature');
+export const SET_CURRENT_DATE = createActionString('SET_CURRENT_DATE', 'Temperature');
 
 export const fetchForecasts = (params = {}) => ({
   type: FETCH_FORECASTS.START,
@@ -34,4 +35,7 @@ export const setCurrentMetric = (metric) => ({
   payload: metric,
 });
 
-
+export const setCurrentDate = (date) => ({
+  type: SET_CURRENT_DATE,
+  payload: date,
+});

@@ -3,15 +3,17 @@ import {
   APPLY_METRICS_TO_FORECASTS,
   FETCH_FORECASTS,
   updateForecastList,
-  setCurrentMetric,
+  applyMetricToForecasts as applyMetricToForecastsFn,
 } from '../actions';
 import { requestKeys } from '../../services/_request/keys';
 import { celsiusToFahrenheit, fahrenheitToCelcius, metricValues } from '../../utils/forecast';
 
-const fetchForecasts = ({ dispatch, getState }) => next => action => {
+const fetchForecasts = ({ dispatch, getState }) => (next) => (action) => {
   next(action);
   if (action.type === FETCH_FORECASTS.START) {
-    const { ui: { pagination } } = getState();
+    const {
+      ui: { pagination },
+    } = getState();
     const { key = requestKeys.fetchForecasts, params, ...rest } = action.meta;
 
     const defaultPagination = pagination.default;
@@ -24,23 +26,30 @@ const fetchForecasts = ({ dispatch, getState }) => next => action => {
           ...params,
           ...defaultPagination,
         },
-        onSuccess: data => {
+        onSuccess: (data) => {
+          const {
+            forecasts: { byList, currentMetric },
+          } = getState();
+          const isNewList = !byList?.length;
           dispatch({ type: FETCH_FORECASTS.SUCCESS, payload: data?.list || [] });
+          if (isNewList && currentMetric !== metricValues.CELCIUS) dispatch(applyMetricToForecastsFn(currentMetric));
         },
         ...rest,
-      }),
+      })
     );
   }
 };
 
-const applyMetricToForecasts = ({ dispatch, getState }) => next => action => {
+const applyMetricToForecasts = ({ dispatch, getState }) => (next) => (action) => {
   next(action);
   if (action.type === APPLY_METRICS_TO_FORECASTS) {
     const { metric } = action.meta;
-    const { forecasts: { byList } } = getState();
-    if (!metric || !byList?.length)
-      return;
-    const payload = byList.map(item => {
+    const {
+      forecasts: { byList },
+    } = getState();
+    if (!metric || !byList?.length) return;
+
+    const payload = byList.map((item) => {
       const isToCelcius = metricValues.CELCIUS === metric;
       const metricFunc = isToCelcius ? fahrenheitToCelcius : celsiusToFahrenheit;
 
@@ -56,7 +65,6 @@ const applyMetricToForecasts = ({ dispatch, getState }) => next => action => {
       };
     });
     dispatch(updateForecastList(payload));
-    dispatch(setCurrentMetric(metric));
   }
 };
 
