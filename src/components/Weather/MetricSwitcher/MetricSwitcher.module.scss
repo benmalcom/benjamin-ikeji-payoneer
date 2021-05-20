@@ -1,17 +1,15 @@
-.metric-switch-controls{
-  margin-top: 5rem;
-  width: 100%;
+.metric-switch-controls {
   @media (min-width: 320px) and (max-width: 480px) {
     margin-top: 2.5rem;
   }
 }
 
-.metric-switch-radio-group{
+.metric-switch-radio-group {
   display: flex;
   flex-direction: row !important;
   justify-content: center;
 }
 
-.switch-control{
+.switch-control {
   display: inline;
 }
