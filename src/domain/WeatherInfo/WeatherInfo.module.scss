@@ -1,14 +1,36 @@
 .container {
+  width: 100vw;
+  height: 100vh;
   position: relative;
 }
 .action-bar {
-  margin-top: 5rem;
+  height: 10rem;
+  margin: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &.has-error {
+    justify-content: flex-end;
+  }
 }
 .refresh-btn {
   position: absolute;
   top: 5px;
   right: 0;
+}
+
+.error {
+  width: fit-content;
+  padding: 1.5rem;
+  background-color: red;
+  color: #ffffff;
+}
+
+.weather-content {
+  flex: 1;
+  &.has-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

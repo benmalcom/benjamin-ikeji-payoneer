@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Container, Box } from '@material-ui/core';
+import cx from 'classnames';
+import { Button, Container, Box, Paper } from '@material-ui/core';
 import dayjs from 'dayjs';
 import { fetchForecasts, resetForecastState, applyMetricToForecasts, setCurrentMetric } from 'redux/actions';
 import { requestKeys } from 'services/_request/keys';
@@ -16,11 +17,12 @@ const PARAMS = { q: 'Munich,de', units: 'metric' };
 const Forecast = () => {
   const [currentDate, setCurrentDate] = useState();
   const dispatch = useDispatch();
-  const { forecastsForNextDays, loading, currentMetric, forecastsByDate } = useSelector(({ forecasts, ui }) => ({
+  const { forecastsForNextDays, loading, currentMetric, forecastsByDate, error } = useSelector(({ forecasts, ui }) => ({
     forecastsForNextDays: forecasts.forNextDays,
     forecastsByDate: forecasts.byDate,
     currentMetric: forecasts.currentMetric,
     loading: ui.loading[requestKeys.fetchForecasts],
+    error: ui.errors[requestKeys.fetchForecasts],
   }));
 
   const getForecasts = (params) => dispatch(fetchForecasts(params));
@@ -53,21 +55,9 @@ const Forecast = () => {
 
   const forecastsForSelectedDate = forecastsByDate[currentDate];
 
-  return loading ? (
-    <Loading />
-  ) : (
-    <Container className={styles.container}>
-      <Box className={styles['action-bar']}>
-        <MetricSwitcher value={currentMetric} onChange={onMetricChange} />
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={() => getForecasts(PARAMS)}
-          className={styles['refresh-btn']}
-        >
-          Refresh
-        </Button>
-      </Box>
+  const getWeatherContent = () => (
+    <>
+      {' '}
       <ForecastCarousel
         currentMetric={currentMetric}
         setCurrentDate={setCurrentDate}
@@ -77,6 +67,30 @@ const Forecast = () => {
         onCardItemClick={onCardItemClick}
       />
       {forecastsForSelectedDate && <DailyWeatherBarChart metric={currentMetric} data={forecastsForSelectedDate} />}
+    </>
+  );
+
+  const hasError = !!error;
+
+  return loading ? (
+    <Loading />
+  ) : (
+    <Container className={styles.container}>
+      <Box className={cx(styles['action-bar'], { [styles['has-error']]: !!hasError })}>
+        {!hasError && <MetricSwitcher value={currentMetric} onChange={onMetricChange} />}
+        <Button
+          color="primary"
+          variant="contained"
+          onClick={() => getForecasts(PARAMS)}
+          className={styles['refresh-btn']}
+        >
+          Refresh
+        </Button>
+      </Box>
+      <Box className={cx(styles['weather-content'], { [styles['has-error']]: !!hasError })}>
+        {hasError && <div className={styles.error}>{error}</div>}
+        {!hasError && getWeatherContent()}
+      </Box>
     </Container>
   );
 };
