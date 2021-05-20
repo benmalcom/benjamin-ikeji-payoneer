@@ -2,6 +2,7 @@
 
 * Clone the repository
 * Install dependencies with `yarn install`
+* Create a `.env` file at the root of the project and add the `REACT_APP_WEATHER_APP_ID` environment variable
 * Visit [localhost:3000](localhost:3000) after successful dependencies installation
 
 
