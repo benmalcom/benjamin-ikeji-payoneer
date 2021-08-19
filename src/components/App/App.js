@@ -10,8 +10,8 @@ const App = () => {
     if (typeof window.Appcues !== 'undefined') {
       window.Appcues.identify(Math.random(), {
         created_at: Date.now(),
-        first_name: 'user',
-        last_name: `${Math.random() * 10}`,
+        first_name: `first_${Math.random() * 10}`,
+        last_name: `last_${Math.random() * 10}`,
       });
     }
   }, []);
