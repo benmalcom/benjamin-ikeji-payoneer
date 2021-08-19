@@ -8,10 +8,10 @@ const App = () => {
 
   useEffect(() => {
     if (typeof window.Appcues !== 'undefined') {
-      window.Appcues.identify(Math.random(), {
+      window.Appcues.identify(Math.floor(Math.random()), {
         created_at: Date.now(),
-        first_name: `first_${Math.random() * 10}`,
-        last_name: `last_${Math.random() * 10}`,
+        first_name: `first_${Math.floor(Math.random() * 10)}`,
+        last_name: `last_${Math.floor(Math.random() * 10)}`,
       });
     }
   }, []);
